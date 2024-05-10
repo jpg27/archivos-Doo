@@ -21,6 +21,8 @@ public final class MessageCatalogBase implements  MessageCatalog{
 		mensajes.put(CodigoMensaje.M00002.getIdentificador(), new Mensaje(CodigoMensaje.M00002, "se ha presentado un problema tratando de llevar a cabo la operacion deseada"));
 		mensajes.put(CodigoMensaje.M00003.getIdentificador(), new Mensaje(CodigoMensaje.M00003, "El identificador del mensaje \"${1}\" que se intento obtener no esta en el catalogo de mensajes base"));
 		mensajes.put(CodigoMensaje.M00004.getIdentificador(), new Mensaje(CodigoMensaje.M00004, "El mensaje con identificador \"${1}\" no esta configurado para residir en el catalogo de mensajes base"));
+		mensajes.put(CodigoMensaje.M00005.getIdentificador(), new Mensaje(CodigoMensaje.M00005, "El mensaje con identificador \"${1}\" no esta configurado para residir en el catalogo de mensajes externo"));
+		mensajes.put(CodigoMensaje.M00006.getIdentificador(), new Mensaje(CodigoMensaje.M00006, "El identificador del mensaje \"${1}\" que se intento obtener no esta en el catalogo de mensajes externo"));
 
 	}
 

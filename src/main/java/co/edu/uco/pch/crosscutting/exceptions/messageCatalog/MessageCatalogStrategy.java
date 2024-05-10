@@ -12,6 +12,10 @@ public final class MessageCatalogStrategy {
 	private static final MessageCatalog base = new MessageCatalogBase();
 	private static final MessageCatalog externalService = new MessageCatalogExternalService();
 	
+	static {
+		inicializar();
+	}
+	
 	private MessageCatalogStrategy() {
 		super();
 	}
@@ -28,10 +32,20 @@ public final class MessageCatalogStrategy {
 	public static final Mensaje getMensaje(final CodigoMensaje codigo, final String...parametros) {
 		
 		if(ObjetHelper.getObjetHelper().isNull(codigo)) {
-			throw new CrosscuttingPCHException(null, null);
+			var mensajeUsuario=MessageCatalogStrategy.getContenidoMensaje(CodigoMensaje.M00002);
+			var mensajeTecnico = MessageCatalogStrategy.getContenidoMensaje(CodigoMensaje.M00001);
+			throw new CrosscuttingPCHException(mensajeTecnico, mensajeUsuario);
 		}
 		
 		return getStrategy(codigo.esBase()).obtenerMensaje(codigo, parametros);
+	}
+	
+	public static final String  getContenidoMensaje(final CodigoMensaje codigo, final String...parametros) {
+		return getMensaje(codigo, parametros).getContenido();
+	}
+	
+	public static void main(String[] args) {
+		System.out.println(getContenidoMensaje(CodigoMensaje.M00007));
 	}
 
 }
