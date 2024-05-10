@@ -1,8 +1,10 @@
 package co.edu.uco.pch.crosscutting.helpers;
 
+
 public final class TextHelper {
 	
 	public static final String EMPTY= "";
+	public static final String UNDERLINE= "_";
 	
 	private TextHelper() {
 		super();
@@ -27,6 +29,19 @@ public final class TextHelper {
 	public static final String applyTrim(final String string) {
 		return getDefaultValue(string).trim();
 				
+	}
+	
+	public static final String concatenate(final String... strings) {
+		final var sb = new StringBuilder(EMPTY);
+		
+		if(!ObjetHelper.getObjetHelper().isNull(strings)) {
+			for (final var string : strings) {
+				sb.append(applyTrim(string));
+			}
+		
+		}
+		
+		return sb.toString();
 	}
 
 
