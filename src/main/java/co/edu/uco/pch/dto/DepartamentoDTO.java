@@ -2,6 +2,7 @@ package co.edu.uco.pch.dto;
 
 import java.util.UUID;
 
+import co.edu.uco.pch.crosscutting.helpers.ObjetHelper;
 import co.edu.uco.pch.crosscutting.helpers.TextHelper;
 import co.edu.uco.pch.crosscutting.helpers.UUIDHelper;
 
@@ -42,7 +43,7 @@ public class DepartamentoDTO {
 		return pais;
 	}
 	public final DepartamentoDTO setPais(final PaisDTO pais) {
-		this.pais = pais;
+		this.pais = ObjetHelper.getObjetHelper().getDefaultValue(pais, new PaisDTO());
 		return this;
 	}
 	

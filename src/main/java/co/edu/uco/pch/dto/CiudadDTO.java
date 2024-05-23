@@ -2,6 +2,7 @@ package co.edu.uco.pch.dto;
 
 import java.util.UUID;
 
+import co.edu.uco.pch.crosscutting.helpers.ObjetHelper;
 import co.edu.uco.pch.crosscutting.helpers.TextHelper;
 import co.edu.uco.pch.crosscutting.helpers.UUIDHelper;
 
@@ -44,7 +45,7 @@ public class CiudadDTO {
 		return departamento;
 	}
 	public final CiudadDTO setDepartamento(final DepartamentoDTO departamento) {
-		this.departamento = departamento;
+		this.departamento = ObjetHelper.getObjetHelper().getDefaultValue(departamento, new DepartamentoDTO());
 		return this;
 	}
 	
