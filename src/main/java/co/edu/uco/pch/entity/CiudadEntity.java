@@ -31,7 +31,7 @@ public class CiudadEntity {
 		return id;
 	}
 	public final CiudadEntity setId(final UUID id) {
-		this.id = UUIDHelper.getDefaultValue(id);
+		this.id = UUIDHelper.generate();
 		return this;
 	}
 	public final String getNombre() {

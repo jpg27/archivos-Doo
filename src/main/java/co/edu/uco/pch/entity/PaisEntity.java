@@ -26,7 +26,7 @@ public final class PaisEntity {
 		return id;
 	}
 	public final PaisEntity setId(final UUID id) {
-		this.id = UUIDHelper.getDefaultValue(id);
+		this.id = UUIDHelper.generate();
 		return this;
 	}
 	public final String getNombre() {
