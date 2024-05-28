@@ -12,7 +12,9 @@ public class DepartamentoDTO {
 	private PaisDTO pais;
 	
 	public DepartamentoDTO() {
-		super();
+		setId(UUIDHelper.getDefault());
+		setNombre(TextHelper.EMPTY);
+		setPais(PaisDTO.build());
 	}
 	
 	public DepartamentoDTO(final UUID id,final String nombre,final PaisDTO pais) {
@@ -29,7 +31,7 @@ public class DepartamentoDTO {
 		return id;
 	}
 	public final DepartamentoDTO setId(final UUID id) {
-		this.id = UUIDHelper.generate();
+		this.id = ObjetHelper.getObjetHelper().getDefaultValue(id, UUIDHelper.getDefault());
 		return this;
 	}
 	public final String getNombre() {

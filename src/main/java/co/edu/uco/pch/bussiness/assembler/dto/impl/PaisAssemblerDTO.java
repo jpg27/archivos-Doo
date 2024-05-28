@@ -4,6 +4,8 @@ import co.edu.uco.pch.dto.PaisDTO;
 
 import static co.edu.uco.pch.crosscutting.helpers.ObjetHelper.getObjetHelper;
 
+import java.util.List;
+
 import co.edu.uco.pch.bussiness.assembler.dto.AssemblerDTO;
 import co.edu.uco.pch.bussiness.domain.PaisDomain;
 
@@ -30,6 +32,18 @@ public final class PaisAssemblerDTO implements AssemblerDTO<PaisDomain, PaisDTO>
 		var paisDomainTmp = getObjetHelper().getDefaultValue(domain, PaisDomain.build());
 		// TODO Auto-generated method stub
 		return PaisDTO.build().setId(paisDomainTmp.getId()).setNombre(paisDomainTmp.getNombre());
+	}
+
+	@Override
+	public List<PaisDomain> toDomainCollection(List<PaisDTO> entityCollection) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<PaisDTO> toDTOCollection(List<PaisDomain> domainCollection) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

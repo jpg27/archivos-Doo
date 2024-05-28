@@ -2,9 +2,13 @@ package co.edu.uco.pch.bussiness.assembler.entity.impl;
 
 import static co.edu.uco.pch.crosscutting.helpers.ObjetHelper.getObjetHelper;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import co.edu.uco.pch.bussiness.assembler.entity.AssemblerEntity;
 import co.edu.uco.pch.bussiness.domain.CiudadDomain;
 import co.edu.uco.pch.bussiness.domain.DepartamentoDomain;
+import co.edu.uco.pch.crosscutting.helpers.ObjetHelper;
 import co.edu.uco.pch.entity.CiudadEntity;
 import co.edu.uco.pch.entity.DepartamentoEntity;
 
@@ -33,6 +37,14 @@ public final class CiudadAssemblerEntity implements AssemblerEntity<CiudadDomain
 		var ciudadDomainTmp = getObjetHelper().getDefaultValue(domain, CiudadDomain.build());
 		var departamentoEntity = departamentoAssembler.toEntity(ciudadDomainTmp.getDepartamento());
 		return CiudadEntity.build().setId(ciudadDomainTmp.getId()).setNombre(ciudadDomainTmp.getNombre()).setDepartamento(departamentoEntity);
+	}
+
+	@Override
+	public final List<CiudadDomain> toDomainCollection(final List<CiudadEntity> entityCollection) {
+		var entityCollectionTmp = ObjetHelper.getObjetHelper().getDefaultValue(entityCollection, new ArrayList<CiudadEntity>());
+		
+		return entityCollectionTmp.stream().map(this::toDomain).toList();
+		
 	}
 
 }

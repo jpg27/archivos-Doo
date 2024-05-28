@@ -6,19 +6,22 @@ import co.edu.uco.pch.data.dao.entity.PaisDAO;
 import co.edu.uco.pch.data.dao.factory.concrete.AzureSQLDAOFactory;
 
 public interface DAOFactory {
-	
-	default DAOFactory getFactory() {
+
+	static DAOFactory getFactory() {
 		return new AzureSQLDAOFactory();
 	}
-	
-	void abrirConexion();
-	void cerrarConexion();
-	void iniciarTransaccion();
-	void confirmarTransaccion();
-	void cancelarTransaccion();
-	
-	PaisDAO getPaisDAO();
-	DepartamentoDAO getDepartamentoDAO();
-	CiudadDAO getCiudadDAO();
 
+	void cerrarConexion();
+
+	void iniciarTransaccion();
+
+	void confirmarTransaccion();
+
+	void cancelarTransaccion();
+
+	PaisDAO getPaisDAO();
+
+	DepartamentoDAO getDepartamentoDAO();
+
+	CiudadDAO getCiudadDAO();
 }

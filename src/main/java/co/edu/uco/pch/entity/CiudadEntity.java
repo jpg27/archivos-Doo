@@ -6,18 +6,18 @@ import co.edu.uco.pch.crosscutting.helpers.ObjetHelper;
 import co.edu.uco.pch.crosscutting.helpers.TextHelper;
 import co.edu.uco.pch.crosscutting.helpers.UUIDHelper;
 
-public class CiudadEntity {
+public final class CiudadEntity {
 	private UUID id;
 	private String nombre;
 	private DepartamentoEntity departamento;
-	
+
 	public CiudadEntity() {
-		super();
+		setId(UUIDHelper.getDefault());
+		setNombre(TextHelper.EMPTY);
+		setDepartamento(DepartamentoEntity.build());
 	}
-	
-	
-	
-	public CiudadEntity(final UUID id,final String nombre,final DepartamentoEntity departamento) {
+
+	public CiudadEntity(final UUID id, final String nombre, final DepartamentoEntity departamento) {
 		setId(id);
 		setNombre(nombre);
 		setDepartamento(departamento);
@@ -30,25 +30,28 @@ public class CiudadEntity {
 	public final UUID getId() {
 		return id;
 	}
+
 	public final CiudadEntity setId(final UUID id) {
-		this.id = UUIDHelper.generate();
+		this.id  = UUIDHelper.generate();
 		return this;
 	}
+
 	public final String getNombre() {
-		return nombre = TextHelper.applyTrim(nombre);
+		return nombre;
 	}
+
 	public final CiudadEntity setNombre(final String nombre) {
 		this.nombre = TextHelper.applyTrim(nombre);
 		return this;
 	}
+
 	public final DepartamentoEntity getDepartamento() {
 		return departamento;
 	}
+
 	public final CiudadEntity setDepartamento(final DepartamentoEntity departamento) {
-		this.departamento =  ObjetHelper.getObjetHelper().getDefaultValue(departamento , new DepartamentoEntity());
+		this.departamento = ObjetHelper.getObjetHelper().getDefaultValue(departamento, new DepartamentoEntity());
 		return this;
 	}
-	
-	
 
 }

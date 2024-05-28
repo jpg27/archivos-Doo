@@ -43,7 +43,20 @@ public final class MessageCatalogBase implements  MessageCatalog{
 		mensajes.put(CodigoMensaje.M00024.getIdentificador(), new Mensaje(CodigoMensaje.M00024,"se ha presentado una excepcion de tipo SQLException tratando de realizar el insert de la ciudad \"${1}\" en la tabla pais de la base de datos azure SQL. para mas detalles revise de forma completa la excepcion raiz presentada"));
 		mensajes.put(CodigoMensaje.M00025.getIdentificador(), new Mensaje(CodigoMensaje.M00025,"El dao factory para crear la ciudad llego nulo"));
 		mensajes.put(CodigoMensaje.M00026.getIdentificador(), new Mensaje(CodigoMensaje.M00026,"Ya existe una ciudad con el nombre \"${1}\" asociada al departamento deseado"));
-		
+		mensajes.put(CodigoMensaje.M00027.getIdentificador(), new Mensaje(CodigoMensaje.M00027,"Se ha presentado un problema tratando de obtener la conexión con la base de datos wednesday en el servidor de bases de datos wednesday.database.windows.net. Por favor revise la traza de errores para identificar y solucionar el problema..."));
+		mensajes.put(CodigoMensaje.M00028.getIdentificador(), new Mensaje(CodigoMensaje.M00028,"Se ha presentado un problema INESPERADO tratando de obtener la conexión con la base de datos wednesday en el servidor de bases de datos wednesday.database.windows.net. Por favor revise la traza de errores para identificar y solucionar el problema..."));
+		mensajes.put(CodigoMensaje.M00029.getIdentificador(), new Mensaje(CodigoMensaje.M00029,"Se ha presentado un problema tratando de llevar a cabo la conuslta de las ciudades"));
+		mensajes.put(CodigoMensaje.M00030.getIdentificador(), new Mensaje(CodigoMensaje.M00030,"El dao factory para consultar las ciudades llego nulo"));
+		mensajes.put(CodigoMensaje.M00031.getIdentificador(), new Mensaje(CodigoMensaje.M00031,"Se ha presentado un problema INESPERADO tratando de registar la ciudad"));
+		mensajes.put(CodigoMensaje.M00032.getIdentificador(), new Mensaje(CodigoMensaje.M00032,"SE ha presentado un problema tratando de consultar la informacion de las ciudades"));
+		mensajes.put(CodigoMensaje.M00033.getIdentificador(), new Mensaje(CodigoMensaje.M00033,"Se ha presentado un problema INESPERADO tratando de consultar las ciudades"));
+		mensajes.put(CodigoMensaje.M00034.getIdentificador(), new Mensaje(CodigoMensaje.M00034,"Ciudades consultadas exitosamente"));
+		mensajes.put(CodigoMensaje.M00035.getIdentificador(), new Mensaje(CodigoMensaje.M00035,"Ciudad creada exitosamente"));
+		mensajes.put(CodigoMensaje.M00036.getIdentificador(), new Mensaje(CodigoMensaje.M00036,"Se ha presentado un problema tratando de registrar la informacion de las ciudades"));
+		mensajes.put(CodigoMensaje.M00037.getIdentificador(), new Mensaje(CodigoMensaje.M00037,"Ciudad eliminada exitosamente"));
+		mensajes.put(CodigoMensaje.M00038.getIdentificador(), new Mensaje(CodigoMensaje.M00038,"Se ha presentado un problema tratando de eliminar la informacion de la ciudad"));
+		mensajes.put(CodigoMensaje.M00039.getIdentificador(), new Mensaje(CodigoMensaje.M00039,"Ciudad modificada exitosamente"));
+		mensajes.put(CodigoMensaje.M00040.getIdentificador(), new Mensaje(CodigoMensaje.M00040,"Se ha presentado un problema tratando de modificar la informacion de la ciudad"));
 	}
 
 	@Override
